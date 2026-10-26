@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniPedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 { text-align: center; color: #1a365d; margin-top: 0; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #2d3748; }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #1d4ed8; }
+        #resultado {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .exito { background-color: #d1fae5; color: #065f46; }
+        .error { background-color: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>MiniPedidos</h2>
+    <div class="form-group">
+        <label for="cliente">Nombre del cliente</label>
+        <input type="text" id="cliente" placeholder="Ingrese nombre del cliente">
+    </div>
+    <div class="form-group">
+        <label for="producto">Producto</label>
+        <select id="producto">
+            <option value="Monitor 24 pulgadas">Monitor 24 pulgadas</option>
+            <option value="Notebook">Notebook</option>
+            <option value="Teclado Mecanico">Teclado Mecanico</option>
+            <option value="Mouse">Mouse</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" id="cantidad" value="1">
+    </div>
+    <button onclick="enviarPedido()">Enviar pedido</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    async function enviarPedido() {
+        const cliente = document.getElementById('cliente').value;
+        const producto = document.getElementById('producto').value;
+        const cantidad = parseInt(document.getElementById('cantidad').value);
+        const resultadoDiv = document.getElementById('resultado');
+
+        const pedido = {
+            id: Date.now().toString(),
+            cliente: cliente,
+            producto: producto,
+            cantidad: cantidad
+        };
+
+        try {
+            const response = await fetch('/pedidos', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(pedido)
+            });
+
+            if (response.ok) {
+                resultadoDiv.className = 'exito';
+                resultadoDiv.style.display = 'block';
+                resultadoDiv.innerHTML = `Pedido enviado correctamente<br>ID: ${pedido.id}`;
+            } else {
+                throw new Error('Error al enviar pedido');
+            }
+        } catch (err) {
+            resultadoDiv.className = 'error';
+            resultadoDiv.style.display = 'block';
+            resultadoDiv.innerHTML = `Error enviando pedido`;
+        }
+    }
+</script>
+
+</body>
+</html>

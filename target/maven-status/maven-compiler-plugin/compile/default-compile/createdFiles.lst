@@ -1,0 +1,11 @@
+com\example\minipedidos\PedidoSqsConsumer.class
+com\example\minipedidos\PedidoConsumer.class
+com\example\minipedidos\RabbitMQConfig.class
+com\example\minipedidos\PedidoController.class
+com\example\minipedidos\MiniPedidosApplication.class
+com\example\minipedidos\dto\QueueRequestDto.class
+com\example\minipedidos\PedidoProducer.class
+com\example\minipedidos\Pedido.class
+com\example\minipedidos\PedidoSqsProducer.class
+com\example\minipedidos\service\RabbitAdminService.class
+com\example\minipedidos\SqsConfig.class

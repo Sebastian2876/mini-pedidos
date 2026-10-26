@@ -1,0 +1,12 @@
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\dto\QueueRequestDto.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\MiniPedidosApplication.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\Pedido.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\PedidoConsumer.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\PedidoController.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\PedidoProducer.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\PedidoSqsConsumer.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\PedidoSqsProducer.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\QueueAdminController.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\RabbitMQConfig.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\service\RabbitAdminService.java
+C:\Users\GAMER\Documents\prueba_2-main\prueba_2-main\mini-pedidos\src\main\java\com\example\minipedidos\SqsConfig.java
